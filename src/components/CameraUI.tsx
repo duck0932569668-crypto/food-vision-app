@@ -111,7 +111,6 @@ export default function CameraUI() {
           
           const data: AnalysisResult = await res.json();
           setResult(data);
-          
           drawBoundingBoxes(data.foods);
       } catch (err) {
           console.error(err);
@@ -135,7 +134,6 @@ export default function CameraUI() {
           <input
             type="file"
             accept="image/*"
-            capture="environment"
             className="hidden"
             onChange={handleImageChange}
           />
@@ -178,11 +176,10 @@ export default function CameraUI() {
           
           <div className="flex w-full space-x-3 pt-2">
             <label className="flex-1 cursor-pointer py-3 text-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors font-medium border border-slate-700">
-              重新拍攝
+              重新拍攝或上傳
               <input
                 type="file"
                 accept="image/*"
-                capture="environment"
                 className="hidden"
                 onChange={handleImageChange}
               />
